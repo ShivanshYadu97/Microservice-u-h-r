@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Naukri Job Card Blocker",
+  "version": "2.0.0",
+  "description": "Hide Naukri job cards by skill, keyword, company, or any visible card text.",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_title": "Naukri Job Card Blocker",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.naukri.com/*",
+        "https://naukri.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

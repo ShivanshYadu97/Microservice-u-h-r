@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Naukri Job Skill Hider",
+  "version": "1.0.0",
+  "description": "Hide Naukri job cards that contain blocked skills or keywords.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.naukri.com/*",
+        "https://naukri.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

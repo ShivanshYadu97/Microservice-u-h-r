@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Naukri Company Site Tab Closer",
+  "version": "1.0.0",
+  "description": "Automatically closes Naukri tabs that show Apply on company site.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": [
+    "https://www.naukri.com/*",
+    "https://naukri.com/*"
+  ],
+  "action": {
+    "default_title": "Naukri Company Site Tab Closer",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.naukri.com/*",
+        "https://naukri.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

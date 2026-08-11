@@ -1,0 +1,27 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: RATING-SERVICE
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ratingmicro
+    username: postgres
+    password: shivansh
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+
+    service-url:
+      defaultZone: http://localhost:8761/eureka

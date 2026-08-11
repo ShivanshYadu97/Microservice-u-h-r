@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Naukri Direct Apply Filter",
+  "version": "1.0.0",
+  "description": "Hides Naukri job cards that redirect to company-site applications.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.naukri.com/*",
+        "https://naukri.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

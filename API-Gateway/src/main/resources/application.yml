@@ -1,0 +1,59 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: API-GATEWAY
+
+  cloud:
+    gateway:
+      routes:
+        - id: USERSERVICE
+          uri: lb://USERSERVICE
+          predicates:
+            - Path=/users/**
+
+        - id: HOTELSERVICE
+          uri: lb://HOTELSERVICE
+          predicates:
+            - Path=/hotels/**,/staffs/**
+
+        - id: RATINGSERVICE
+          uri: lb://RATINGSERVICE
+          predicates:
+            - Path=/ratings/**
+
+  security:
+    oauth2:
+
+      # OAuth2 Client - browser login ke liye
+      client:
+        registration:
+          keycloak:
+            client-id: mic-uhr
+            client-secret: v7JJ6YV0w8KJdqpfzFosePuFGzLTXHMzPwK7BsKwuqv8EquDJx49ufJoLmRqwBdfJrE6ZT5A1DJiks1HVa9Lao
+            authorization-grant-type: authorization_code
+            scope:
+              - openid
+              - profile
+              - email
+
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:9090/realms/back-microservice-h-u-r
+
+      # OAuth2 Resource Server - JWT validate karne ke liye
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/back-microservice-h-u-r
+
+eureka:
+  instance:
+    prefer-ip-address: true
+
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+
+    service-url:
+      defaultZone: http://localhost:8761/eureka
