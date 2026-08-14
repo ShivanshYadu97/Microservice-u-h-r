@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Naukri Open Jobs</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <header>
+        <h1>Naukri Open Jobs</h1>
+      </header>
+
+      <section class="content">
+        <div class="summary">
+          <strong id="count">Checking current page...</strong>
+          <span>Only jobs already loaded on this page will open.</span>
+        </div>
+
+        <label class="field">
+          <span>Delay between tabs</span>
+          <select id="delay">
+            <option value="0">Instant</option>
+            <option value="100">0.1 second</option>
+            <option value="250">0.25 second</option>
+            <option value="500">0.5 second</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Open max tabs</span>
+          <input id="limit" type="number" min="1" max="100" value="30" />
+        </label>
+
+        <div class="actions">
+          <button id="refreshButton" type="button">Refresh count</button>
+          <button id="openButton" type="button">Open all jobs</button>
+        </div>
+
+        <div id="preview" class="preview"></div>
+        <footer id="status">Open a Naukri results page.</footer>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

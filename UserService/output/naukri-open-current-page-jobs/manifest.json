@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Naukri Open Current Page Jobs",
+  "version": "1.0.1",
+  "description": "Open all job cards loaded on the current Naukri results page.",
+  "permissions": ["activeTab", "tabs", "storage"],
+  "host_permissions": [
+    "https://www.naukri.com/*",
+    "https://naukri.com/*"
+  ],
+  "action": {
+    "default_title": "Open Naukri Jobs",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.naukri.com/*",
+        "https://naukri.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

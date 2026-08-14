@@ -95,6 +95,24 @@
 	    	 <artifactId>resilience4j-spring-boot2</artifactId>
 <!--	    	 <version>9.0.5</version>-->
 	    </dependency>
+	    
+			    <!-- Spring Security -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
+		<!-- OAuth2 Resource Server -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+		</dependency>
+		
+		<!-- OAuth Client dependency -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-oauth2-client</artifactId>
+		</dependency>
 
     </dependencies>
     
