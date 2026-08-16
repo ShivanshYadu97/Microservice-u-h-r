@@ -43,6 +43,8 @@ public class RestTemplateInterceptor implements ClientHttpRequestInterceptor {
                 client.getAccessToken().getTokenValue();
 
         logger.info("RestTemplate interceptor: Token generated");
+        logger.info("Rest Template interceptor: Token : {}", token);
+        logger.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Rest Interceptor ran!!!!!!");
 
         request.getHeaders().add(
                 "Authorization",

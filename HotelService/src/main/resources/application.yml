@@ -6,7 +6,7 @@ spring:
     name: HOTEL-SERVICE
 
   config:
-    import: configserver:http://localhost:8085		#Config Application Url
+    import: configserver:http://localhost:8085 # Config Application Url
 
   datasource:
     url: jdbc:postgresql://localhost:5432/hotelmicro
@@ -18,13 +18,17 @@ spring:
       ddl-auto: update
     show-sql: true
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/back-microservice-h-u-r
+
 #eureka:
 #  instance:
 #    prefer-ip-address: true
-#
 #  client:
 #    fetch-registry: true
 #    register-with-eureka: true
-#
 #    service-url:
 #      defaultZone: http://localhost:8761/eureka

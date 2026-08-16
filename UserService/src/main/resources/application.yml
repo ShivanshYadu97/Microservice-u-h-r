@@ -24,10 +24,13 @@ spring:
 
   security:
     oauth2:
+
+      # Resource Server - incoming JWT validate karne ke liye
       resourceserver:
         jwt:
           issuer-uri: http://localhost:9090/realms/back-microservice-h-u-r
 
+      # OAuth2 Client - internal service-to-service token ke liye
       client:
         registration:
           my-internal-client:
@@ -35,6 +38,8 @@ spring:
             authorization-grant-type: client_credentials
             client-id: mic-uhr
             client-secret: v7JJ6YV0w8KJdqpfzFosePuFGzLTXHMzPwK7BsKwuqv8EquDJx49ufJoLmRqwBdfJrE6ZT5A1DJiks1HVa9Lao
+            scope:
+              - internal
 
         provider:
           keycloak:
