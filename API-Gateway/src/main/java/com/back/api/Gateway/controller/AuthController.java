@@ -45,4 +45,9 @@ public class AuthController {
         
         return new ResponseEntity<>(authResponse,HttpStatus.OK);
     }
+    
+    @GetMapping("/logged-out")
+    public String loggedOut() {
+        return "Successfully Logged Out";
+    }
 }
